@@ -1,0 +1,74 @@
+<!-- <section class="content-header">
+	<h1>
+		Dashboard
+		<small>Control panel</small>
+	</h1>
+	<ol class="breadcrumb">
+		<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+		<li class="active">Dashboard</li>
+	</ol>
+</section> -->
+
+<section class="content">
+	<div class="row">
+
+		<a href ng-click="logout()" style="float:right;">
+			<!-- <span class="hidden-xs">{{$root.user.username}}</span> -->
+			<span class="glyphicon glyphicon-off"></span> Déconnexion
+		</a>
+
+		<h2>Les compétitions</h2>
+		<div style="width:100%;display:inline-block;"
+			ui-grid="grid.competitions" 
+			class="" 
+			ui-grid-auto-resize 
+			ui-grid-resize-columns>
+		</div>
+		<div class="form-group">
+			<label>Sélectionner une compétition : </label>
+			<div
+			    isteven-multi-select
+			    input-model="competitions"
+			    output-model="selectedCompetition"
+			    button-label="name"
+			    item-label="id name"
+			    helper-elements="none"
+			    tick-property="selected"
+			    selection-mode="single"
+			    class="multi-select"></div>
+		</div>
+
+		<h2>M'inscrire</h2>
+		<form class="">
+			<div class="form-group">
+				<label>Sélectionner une tranche horaire : </label>
+				<select class="form-control" style="width:100px;" ng-model="tranchesHoraires.selected">
+					<option ng-repeat="tranche in tranchesHoraires.list">{{tranche.value}}</option>
+				</select>
+			</div>
+			
+			<div class="form-group">
+				<label>Commentaire : </label>
+				<input type="text" class="form-control" id="" style="width:600px" placeholder="Commentaire pour l'organisateur...">
+			</div>
+
+			<div class="form-group">
+				<button type="button" class="btn btn-success">M'inscrire à la compétition {{selectedCompetition[0].name}}</button>
+			</div>
+
+			<div class="form-group">
+				<button type="button" class="btn btn-danger">Me scratcher de la compétition {{selectedCompetition[0].name}}</button>
+			</div>
+		</form>
+
+		<h2>Liste des Inscrits</h2>
+		<div class="form-group">
+			<label>Liste des inscrits pour la compétition {{selectedCompetition[0].name}} : </label>
+			<div style="width:100%;display:inline-block;"
+				ui-grid="grid.inscrits" 
+				class="" 
+				ui-grid-auto-resize 
+				ui-grid-resize-columns>
+			</div>
+	</div>
+</section>

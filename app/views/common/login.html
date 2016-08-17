@@ -1,0 +1,39 @@
+<div class="login-box">
+	<div class="login-logo">
+		<h1>Identification Utilisateur</h1>
+	</div>
+	<div class="login-box-body">
+		<p class="login-box-msg">Veuillez vous authentifier pour vous inscrire aux compétitions</p>
+		<form ng-submit="login()" form-autofill-fix>
+			<div class="form-group has-feedback">
+				<label for="licenceNumber">Numéro de licence</label>
+				<input type="text" ng-model="user.licence" class="form-control" placeholder="Numéro de licence BlueGreen" ng-required /> 
+				<span class="glyphicon glyphicon-user form-control-feedback"></span>
+			</div>
+			<div class="form-group">
+				<div
+				    isteven-multi-select
+				    input-model="clubs"
+				    output-model="selectedClub"
+				    button-label="icon name"
+				    item-label="icon name"
+				    helper-elements="none"
+				    tick-property="selected"
+				    selection-mode="single"
+				    class="multi-select"></div>
+			</div>
+			<div class="row">
+				<div class="col-xs-8">
+					<div class="checkbox icheck">
+						<label> <input ng-disabled="!user.licence || user.licence.length == 0" type="checkbox" ng-model="rememberMe"> Se souvenir de moi</label>
+					</div>
+				</div>
+				<div class="col-xs-4">
+					<button type="submit" ng-disabled="!user.licence || user.licence.length == 0 || club.numero_ffg.length == 0" class="btn btn-success btn-block btn-flat">Valider</button>
+				</div>
+			</div>
+
+			<div ng-show="authentication.status=='failed'" class="alert alert-danger login-failed" role="alert"><strong>{{authentication.message}}</strong></div>
+		</form>
+	</div>
+</div>

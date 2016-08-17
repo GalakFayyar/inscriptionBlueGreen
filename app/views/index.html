@@ -1,0 +1,9 @@
+<div class="wrapper">
+	<!-- header logo: style can be found in header.less -->
+	<!-- <header class="main-header" ng-include="'views/common/header.html'" ng-controller="HeaderController"></header> -->
+	
+	<div class="content-wrapper" ui-view="content" ui-i18n="{{$root.lang}}"></div>
+
+	<footer class="main-footer" ng-include="'views/common/footer.html'" ng-controller="FooterController"></footer>
+</div>
+<!-- ./wrapper -->
