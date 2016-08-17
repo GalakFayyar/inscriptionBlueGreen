@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Tabord NG &copy; GUI project
 ===================
 
@@ -24,3 +25,7 @@ start python server
 
 To launch background from remote server (without interruption by exiting) :
 `nohup python -m SimpleHTTPServer 8080`
+=======
+# inscriptionBlueGreen
+Module for inscription
+>>>>>>> 3d78744480cc30ea22b97201f99c251ca2b4ce03
